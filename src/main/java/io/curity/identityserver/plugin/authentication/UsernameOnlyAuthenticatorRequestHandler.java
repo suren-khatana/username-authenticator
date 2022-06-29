@@ -120,7 +120,7 @@ public final class UsernameOnlyAuthenticatorRequestHandler implements Authentica
                 .setSubject("jwt-assertion-test-client")
                 .setExpiration(ZonedDateTime.now(ZoneOffset.UTC).plusMinutes(10)).setUniqueId(UUID.randomUUID().toString())
                 .setNotBefore(ZonedDateTime.now(ZoneOffset.UTC)).setAudience("https://login-external.curity.local/external/~")
-                .addClaim("my-claim","my-value");
+                .addClaim("my-claim","my-value"); // custom data
 
         // Sign and encode the JWT
         String jws = JWT.getEncoder().encode(jwt, signer);
