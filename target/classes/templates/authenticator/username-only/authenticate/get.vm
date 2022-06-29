@@ -1,0 +1,38 @@
+#define ($_body)
+
+    #if ($_errors.toArray()[0]=='validation.error.username.required')
+        #set($_errorClass = "is-error is-error-danger")
+    #end
+
+    #parse("fragments/jquery")
+
+    #set($isHidden = "hidden")
+    #if ($error)
+        #set($isHidden = "not-hidden")
+    #end
+<div class="mt3 px3 lg-px4" id="user-error" $!isHidden>
+    <div class="alert alert-danger px4">
+        $!error<br>
+    </div>
+</div>
+
+<form method="post" action="$_authUrl">
+
+    <div class="sm-col-12 center">
+        <p>
+            #message("authenticator.username-only.authenticate.view.authenticate")
+        </p>
+    </div>
+
+    <label for="username" class="$!_errorClass">#message("authenticator.username-only.authenticate.view.username")</label>
+    <input type="text" id="username" name="username" class="block full-width mb1 field-light $!_errorClass"
+           autocapitalize="none"
+           required
+           value="$!username">
+
+    <button type="submit" class="button button-fullwidth button-primary">#message("authenticator.username-only.authenticate.view.submit")</button>
+
+</form>
+#end
+
+#parse("layouts/default")

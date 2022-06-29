@@ -1,0 +1,5 @@
+io/curity/identityserver/plugin/authentication/UsernameOnlyAuthenticatorRequestHandler.class
+io/curity/identityserver/plugin/authentication/RequestModel.class
+io/curity/identityserver/plugin/descriptor/UsernameOnlyAuthenticatorPluginDescriptor.class
+io/curity/identityserver/plugin/config/UsernameOnlyAuthenticatorPluginConfig.class
+io/curity/identityserver/plugin/authentication/RequestModel$Post.class
